@@ -67,8 +67,9 @@ def export_coordinates():
     
     print(f"Sauvegarde des {len(lons)} coordonnées...")
     df = pd.DataFrame({
+        "id": np.arange(len(lons), dtype=np.int64),
         "lon": lons,
-        "lat": lats
+        "lat": lats,
     })
     
     csv_path = DATASET_DIR / "points_agricoles.csv"
